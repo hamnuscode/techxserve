@@ -13,8 +13,8 @@ const serviceLinks = [
   { label: "Custom Software", href: "/services#custom-software" },
   { label: "Cloud & Transformation", href: "/services#cloud" },
   { label: "AI & Data Analytics", href: "/services#ai-data" },
-  { label: "Mobile & Web", href: "/services#mobile-web" },
   { label: "Automation & SaaS", href: "/services#automation" },
+  { label: "Mobile & Web", href: "/services#mobile-web" },
 ];
 
 export default function Footer() {
@@ -29,15 +29,15 @@ export default function Footer() {
               <span className="w-7 h-7 rounded-md bg-brand-red flex items-center justify-center text-white font-black text-xs shadow-[0_2px_8px_rgba(204,0,0,0.5)]">TXS</span>
               <span className="font-bold text-[15px] tracking-tight">Tech<span className="text-brand-red">x</span>Serve</span>
             </Link>
-            <p className="text-[#555] text-xs italic mb-4">Tomorrow&apos;s Reality, Today.</p>
+            <p className="text-[#a1a1aa] text-xs italic mb-4">Tomorrow&apos;s Reality, Today.</p>
             <div className="flex flex-col gap-2.5">
-              <a href="tel:+13072939151" className="flex items-center gap-2 text-[#666] text-xs hover:text-white transition-colors">
+              <a href="tel:+13072939151" className="flex items-center gap-2 text-[#a1a1aa] text-xs hover:text-white transition-colors">
                 <Phone size={12} className="text-brand-red" />+1 (307) 293-9151
               </a>
-              <a href="mailto:info@techxserve.com" className="flex items-center gap-2 text-[#666] text-xs hover:text-white transition-colors">
+              <a href="mailto:info@techxserve.com" className="flex items-center gap-2 text-[#a1a1aa] text-xs hover:text-white transition-colors">
                 <Mail size={12} className="text-brand-red" />info@techxserve.com
               </a>
-              <span className="flex items-start gap-2 text-[#666] text-xs">
+              <span className="flex items-start gap-2 text-[#a1a1aa] text-xs">
                 <MapPin size={12} className="text-brand-red mt-0.5 shrink-0" />Sheridan, WY · Islamabad, PK
               </span>
             </div>
@@ -45,11 +45,11 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#444] mb-4">Company</p>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#d4d4d8] mb-4">Company</p>
             <ul className="space-y-2.5">
               {quickLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-[#666] text-xs hover:text-white transition-colors">
+                  <Link href={l.href} className="text-[#a1a1aa] text-xs hover:text-white transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -59,11 +59,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#444] mb-4">Services</p>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#d4d4d8] mb-4">Services</p>
             <ul className="space-y-2.5">
               {serviceLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-[#666] text-xs hover:text-white transition-colors">
+                  <Link href={l.href} className="text-[#a1a1aa] text-xs hover:text-white transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Social + tagline */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#444] mb-4">Connect</p>
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-[#d4d4d8] mb-4">Connect</p>
             <div className="flex gap-2 mb-5">
               {[
                 {
@@ -93,13 +93,13 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-8 h-8 rounded-lg border border-[#222] flex items-center justify-center text-[#555] hover:text-white hover:border-brand-red/50 transition-all duration-200"
+                  className="w-8 h-8 rounded-lg border border-[#222] flex items-center justify-center text-[#a1a1aa] hover:text-white hover:border-brand-red/50 transition-all duration-200"
                 >
                   {s.icon}
                 </a>
               ))}
             </div>
-            <p className="text-[#333] text-[11px] leading-relaxed">
+            <p className="text-[#888] text-[11px] leading-relaxed">
               We build technology that works, so you can focus on building your business.
             </p>
           </div>
@@ -108,10 +108,10 @@ export default function Footer() {
 
       <div className="border-t border-[#181818]">
         <div className="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-between">
-          <p className="text-[#444] text-[11px]">© 2025 TechxServe. All rights reserved.</p>
+          <p className="text-[#71717a] text-[11px]">© 2025 TechxServe. All rights reserved.</p>
           <div className="flex items-center gap-1.5">
             <span className="red-dot w-1.5 h-1.5" />
-            <span className="text-[#333] text-[11px]">Live & Building</span>
+            <span className="text-[#71717a] text-[11px]">Live & Building</span>
           </div>
         </div>
       </div>

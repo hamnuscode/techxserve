@@ -56,7 +56,7 @@ const projects: Project[] = [
     initials: "BH",
     tag: "Logistics · Mobile",
     oneLine: "An end-to-end mobile delivery platform in Bahrain connecting riders, dispatchers, and customers.",
-    overview: "BHTD needed a mobile-first logistics platform to coordinate last-mile delivery operations across Bahrain — connecting dispatchers, riders, and customers in a single, real-time system.",
+    overview: "BHTD needed a mobile-first logistics platform to coordinate last-mile delivery operations across Bahrain, connecting dispatchers, riders, and customers in a single, real-time system.",
     built: [
       "Cross-platform rider app with live GPS tracking",
       "Dispatcher web panel for order management and routing",
@@ -72,7 +72,7 @@ const projects: Project[] = [
     name: "Police Foundation",
     initials: "PF",
     tag: "Government · AI · Real Estate",
-    oneLine: "Two purpose-built portals — AI-powered agriculture advisory and seamless real estate management.",
+    oneLine: "Two purpose-built portals: an AI-powered agriculture advisory and a seamless real estate management platform.",
     overview: "The Police Foundation required two separate but cohesive web portals serving entirely different audiences: an AI agricultural advisory portal and a real estate management portal for property listing and transaction support.",
     built: [
       "AI agricultural advisory platform with natural language input",
@@ -88,7 +88,7 @@ const projects: Project[] = [
 
 function TagBadge({ tag }: { tag: string }) {
   return (
-    <span className="inline-flex px-2 py-0.5 rounded-md text-[9px] font-semibold tracking-wide border border-border-gray bg-off-white text-mid-gray">
+    <span className="inline-flex px-2 py-0.5 rounded-md text-[11px] font-semibold tracking-wide border border-border-gray bg-off-white text-mid-gray">
       {tag}
     </span>
   );
@@ -124,9 +124,9 @@ function ProjectCard({
         <div className="flex items-start justify-between gap-3 mb-3">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-brand-red/8 flex items-center justify-center shrink-0">
-              <span className="text-brand-red text-[10px] font-black">{project.initials}</span>
+              <span className="text-brand-red text-[12px] font-black">{project.initials}</span>
             </div>
-            <h3 className={`font-black text-base transition-colors duration-200 ${isActive ? "text-brand-red" : "text-charcoal group-hover:text-charcoal"}`}>
+            <h3 className={`font-black text-[20px] transition-colors duration-200 ${isActive ? "text-brand-red" : "text-charcoal group-hover:text-charcoal"}`}>
               {project.name}
             </h3>
           </div>
@@ -142,7 +142,7 @@ function ProjectCard({
         </div>
 
         {/* One-liner */}
-        <p className="text-mid-gray text-sm leading-relaxed">{project.oneLine}</p>
+        <p className="text-mid-gray text-[18px] leading-relaxed">{project.oneLine}</p>
       </div>
     </button>
   );
@@ -150,33 +150,33 @@ function ProjectCard({
 
 function CaseStudyDetail({ project }: { project: Project }) {
   return (
-    <div className="rounded-2xl bg-white overflow-hidden border border-border-gray">
+    <div className="rounded-3xl bg-white overflow-hidden border-2 border-brand-red shadow-[0_20px_50px_rgba(204,0,0,0.18)]">
       <div>
 
         {/* Top bar */}
-        <div className="flex items-center justify-between px-10 py-5 border-b border-border-gray bg-off-white">
+        <div className="flex items-center justify-between px-10 py-6 border-b border-border-gray bg-off-white/50">
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 rounded-lg bg-brand-red/8 border border-brand-red/15 flex items-center justify-center">
               <span className="text-brand-red text-[10px] font-black">{project.initials}</span>
             </div>
-            <p className="text-[11px] font-bold uppercase tracking-widest text-charcoal">
-              {project.name} — Case Study
+            <p className="text-[15px] font-bold uppercase tracking-widest text-charcoal">
+              {project.name} Case Study
             </p>
           </div>
-          <p className="text-[10px] text-mid-gray font-medium hidden sm:block">{project.tag}</p>
+          <p className="text-xs text-mid-gray font-medium hidden sm:block">{project.tag}</p>
         </div>
 
-        <div className="p-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="p-10 lg:p-14 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: Overview + screenshots */}
           <div className="space-y-8">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-3">Overview</p>
-              <p className="text-charcoal/70 text-[15px] leading-relaxed">{project.overview}</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-red mb-3">Overview</p>
+              <p className="text-charcoal/70 text-[19px] leading-relaxed">{project.overview}</p>
             </div>
 
             {/* Screenshot placeholders */}
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-4">Screenshots</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-red mb-4">Screenshots</p>
               <div className="grid grid-cols-3 gap-3">
                 {project.photos.map((ph) => (
                   <div
@@ -184,9 +184,9 @@ function CaseStudyDetail({ project }: { project: Project }) {
                     className="aspect-video rounded-xl bg-off-white border border-border-gray flex flex-col items-center justify-center gap-1.5"
                   >
                     <div className="w-7 h-7 rounded-md bg-border-gray/60 flex items-center justify-center">
-                      <span className="text-[7px] font-bold text-mid-gray">IMG</span>
+                      <span className="text-[9px] font-bold text-mid-gray">IMG</span>
                     </div>
-                    <span className="text-[9px] text-mid-gray text-center leading-tight px-1">{ph}</span>
+                    <span className="text-[11px] text-mid-gray text-center leading-tight px-1">{ph}</span>
                   </div>
                 ))}
               </div>
@@ -196,12 +196,12 @@ function CaseStudyDetail({ project }: { project: Project }) {
           {/* Right: What we built + link */}
           <div className="space-y-8">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-4">What We Built</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-red mb-4">What We Built</p>
               <ul className="space-y-4">
                 {project.built.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle size={15} className="text-brand-red mt-[2px] shrink-0" />
-                    <span className="text-charcoal/75 text-[15px] leading-snug">{item}</span>
+                    <span className="text-charcoal/75 text-[19px] leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -220,9 +220,9 @@ function CaseStudyDetail({ project }: { project: Project }) {
               ) : (
                 <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-off-white border border-border-gray">
                   <div className="w-1.5 h-1.5 rounded-full bg-mid-gray/40" />
-                  <p className="text-mid-gray text-xs">
+                  <p className="text-mid-gray text-sm">
                     {project.id === "ispr" || project.id === "police-foundation"
-                      ? "Internal system — not publicly accessible"
+                      ? "Internal system, not publicly accessible"
                       : "Live link coming soon"}
                   </p>
                 </div>
@@ -268,7 +268,7 @@ export default function ProductsGrid() {
 
             {/* Inline dropdown detail */}
             <div
-              className="overflow-hidden transition-all duration-[550ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+              className="overflow-hidden px-1 pb-10 pt-2 transition-all duration-[550ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               style={{
                 maxHeight: active ? "1000px" : "0px",
                 opacity: active ? 1 : 0,
@@ -279,6 +279,7 @@ export default function ProductsGrid() {
           </div>
         );
       })}
+    
     </div>
   );
 }

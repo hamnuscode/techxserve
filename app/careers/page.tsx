@@ -13,7 +13,7 @@ const culture = [
   {
     icon: Rocket,
     title: "Move Fast, Build Right",
-    desc: "We operate with speed and precision. No endless meetings, no bureaucracy — just a focused team shipping excellent work.",
+    desc: "We operate with speed and precision. No endless meetings, no bureaucracy. Just a focused team shipping excellent work.",
     color: "bg-brand-red/8",
     iconColor: "text-brand-red",
   },
@@ -27,7 +27,7 @@ const culture = [
   {
     icon: Globe,
     title: "Global, Ambitious, Grounded",
-    desc: "We work with clients across 15+ countries and think at a global scale — but we stay focused on doing things the right way.",
+    desc: "We work with clients globally and think at a global scale, but we stay focused on doing things the right way.",
     color: "bg-brand-red/8",
     iconColor: "text-brand-red",
   },
@@ -48,7 +48,7 @@ export default function CareersPage() {
             </h1>
             <p className="text-xl text-mid-gray max-w-xl">
               We&apos;re always looking for sharp minds who care about quality, move fast, and want to work on
-              problems that actually matter. If that&apos;s you — let&apos;s talk.
+              problems that actually matter. If that&apos;s you, let&apos;s talk.
             </p>
           </AnimatedSection>
         </div>
@@ -95,7 +95,7 @@ export default function CareersPage() {
 
       {/* ── Open Application ── */}
       <section className="py-20 bg-white border-t border-border-gray">
-        <div className="max-w-[1280px] mx-auto px-6 text-center">
+        <div className="max-w-[1280px] mx-auto px-6">
           <AnimatedSection>
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-red/8 mb-6">
               <Rocket size={28} className="text-brand-red" />
@@ -103,7 +103,7 @@ export default function CareersPage() {
             <h2 className="text-3xl font-black text-charcoal tracking-tight mb-3">
               Don&apos;t See Your Role?
             </h2>
-            <p className="text-mid-gray mb-8 max-w-md mx-auto">
+            <p className="text-mid-gray mb-8 max-w-md">
               We hire for talent, not just titles. Reach out and tell us what you&apos;re great at.
             </p>
             <a

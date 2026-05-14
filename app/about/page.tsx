@@ -29,7 +29,7 @@ const steps = [
 ];
 
 const whyPoints = [
-  { icon: Target,          title: "No Black Boxes",               desc: "Regular updates and fast adaptation — no surprises, ever."                                       },
+  { icon: Target,          title: "No Black Boxes",               desc: "Regular updates and fast adaptation. No surprises, ever."                                       },
   { icon: Clock,           title: "A Track Record You Can Trust", desc: "Premium results delivered on time, without hidden costs."                                       },
   { icon: Shield,          title: "Ironclad Security",            desc: "Enterprise-grade security baked into every system from day one."                                 },
   { icon: Layers,          title: "Built to Scale",               desc: "Flexible, future-proof architectures that grow effortlessly alongside your business."           },
@@ -41,7 +41,6 @@ const industries = ["Finance", "Technology", "Retail", "Logistics", "Education",
 const aboutStats = [
   { value: "2022", label: "Year Founded"    },
   { value: "25+",  label: "Team Members"    },
-  { value: "15+",  label: "Countries Served" },
   { value: "98%",  label: "Satisfaction"    },
 ];
 
@@ -96,8 +95,8 @@ export default function AboutPage() {
                 </p>
                 <p>
                   From smart automation to massive enterprise platforms, everything we build is designed to
-                  be fast, secure, and scalable. That&apos;s how we&apos;ve grown to serve clients in over 15
-                  countries with a 98% satisfaction rate.
+                  be fast, secure, and scalable. That&apos;s how we&apos;ve grown to serve a diverse
+                  global clientele with a 98% satisfaction rate.
                 </p>
               </div>
             </AnimatedSection>
@@ -108,10 +107,10 @@ export default function AboutPage() {
       {/* ── Key Stats ── */}
       <section className="py-16 bg-off-white border-y border-border-gray">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 divide-x divide-border-gray">
+          <div className="flex flex-wrap justify-center gap-0 divide-y sm:divide-y-0 sm:divide-x divide-border-gray">
             {aboutStats.map((s, i) => (
-              <AnimatedSection key={s.label} delay={i * 90} className="px-8 py-4 text-center">
-                <CounterStat value={s.value} label={s.label} />
+              <AnimatedSection key={s.label} delay={i * 90} className="px-12 py-4 text-center min-w-[200px]">
+                <CounterStat value={s.value} label={s.label} labelRed />
               </AnimatedSection>
             ))}
           </div>
@@ -130,20 +129,20 @@ export default function AboutPage() {
               {
                 num: "01",
                 heading: "Our Vision",
-                body: "To redefine what's possible with technology on a global scale — building with brilliant innovation, operating with uncompromising integrity, and measuring success entirely by the impact we deliver on your bottom line.",
+                body: "To redefine what's possible with technology on a global scale, building with brilliant innovation, operating with uncompromising integrity, and measuring success entirely by the impact we deliver on your bottom line.",
                 accent: "from-brand-red/15 to-transparent",
               },
               {
                 num: "02",
                 heading: "Our Mission",
-                body: "To equip companies around the world with smart, scalable digital tools that actually drive growth and open up new opportunities. We don't aim to meet expectations — we build to exceed them, every single time.",
+                body: "To equip companies around the world with smart, scalable digital tools that actually drive growth and open up new opportunities. We don't aim to meet expectations. We build to exceed them, every single time.",
                 accent: "from-brand-red/8 to-transparent",
               },
             ].map((card, i) => (
               <AnimatedSection key={card.heading} delay={i * 120}>
                 <div className="relative overflow-hidden bg-off-white rounded-3xl border border-border-gray p-10 h-full">
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${card.accent}`} />
-                  <span className="text-7xl font-black text-border-gray leading-none block mb-4 select-none">{card.num}</span>
+                  <span className="text-7xl font-black text-brand-red leading-none block mb-4 select-none">{card.num}</span>
                   <h3 className="text-xl font-bold text-charcoal mb-3">{card.heading}</h3>
                   <p className="text-mid-gray leading-relaxed">{card.body}</p>
                 </div>
@@ -156,15 +155,15 @@ export default function AboutPage() {
       {/* ── Global Presence Map ── */}
       <section className="py-24 bg-off-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="text-center mb-12">
+          <AnimatedSection className="mb-12">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">
               Global Presence
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-charcoal tracking-tight mb-4">
               We Build Everywhere
             </h2>
-            <p className="text-mid-gray text-lg max-w-xl mx-auto">
-              Headquartered in Sheridan, WY with a development hub in Islamabad — serving clients across five continents.
+            <p className="text-mid-gray text-lg max-w-xl">
+              Headquartered in Sheridan, WY with a development hub in Islamabad, serving clients globally.
             </p>
           </AnimatedSection>
           <AnimatedSection>
@@ -201,7 +200,7 @@ export default function AboutPage() {
       {/* ── How We Work ── */}
       <section className="py-24 bg-off-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-16 text-center">
+          <AnimatedSection className="mb-16">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Process</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">How We Work</h2>
           </AnimatedSection>
@@ -209,7 +208,7 @@ export default function AboutPage() {
             {steps.map((step, i) => (
               <AnimatedSection key={step.n} delay={i * 80}>
                 <div className="relative bg-white rounded-2xl border border-border-gray p-6 h-full flex flex-col gap-3 hover:border-brand-red/30 hover:shadow-[var(--shadow-md)] transition-all duration-300">
-                  <span className="text-[42px] font-black text-brand-red/10 leading-none">{step.n}</span>
+                  <span className="text-[42px] font-black text-brand-red leading-none">{step.n}</span>
                   <h3 className="font-bold text-charcoal text-sm">{step.title}</h3>
                   <p className="text-mid-gray text-xs leading-relaxed flex-1">{step.desc}</p>
                   {i < steps.length - 1 && (
@@ -230,8 +229,23 @@ export default function AboutPage() {
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Why Choose TechxServe</h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whyPoints.map((pt, i) => (
+            {whyPoints.slice(0, 3).map((pt, i) => (
               <AnimatedSection key={pt.title} delay={i * 70}>
+                <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
+                  <div className="w-9 h-9 rounded-xl bg-brand-red/8 flex items-center justify-center shrink-0 mt-0.5">
+                    <pt.icon size={16} className="text-brand-red" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-charcoal text-sm mb-1.5">{pt.title}</h3>
+                    <p className="text-mid-gray text-xs leading-relaxed">{pt.desc}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-5 mt-5">
+            {whyPoints.slice(3).map((pt, i) => (
+              <AnimatedSection key={pt.title} delay={(i + 3) * 70} className="w-full md:w-[calc(50%-10px)] lg:w-[calc(33.33%-14px)]">
                 <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
                   <div className="w-9 h-9 rounded-xl bg-brand-red/8 flex items-center justify-center shrink-0 mt-0.5">
                     <pt.icon size={16} className="text-brand-red" />
@@ -249,7 +263,7 @@ export default function AboutPage() {
 
       {/* ── Industries ── */}
       <section className="py-14 bg-off-white border-y border-border-gray">
-        <div className="max-w-[1280px] mx-auto px-6 text-center">
+        <div className="max-w-[1280px] mx-auto px-6">
           <AnimatedSection>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-mid-gray mb-6">Industries Served</p>
             <div className="flex flex-wrap justify-center gap-3">

@@ -6,6 +6,7 @@ interface CounterStatProps {
   value: string;
   label: string;
   dark?: boolean;
+  labelRed?: boolean;
 }
 
 function parseTarget(value: string): { num: number; prefix: string; suffix: string } {
@@ -14,7 +15,7 @@ function parseTarget(value: string): { num: number; prefix: string; suffix: stri
   return { num: parseInt(match[2], 10), prefix: match[1], suffix: match[3] };
 }
 
-export default function CounterStat({ value, label, dark = false }: CounterStatProps) {
+export default function CounterStat({ value, label, dark = false, labelRed = false }: CounterStatProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
@@ -50,7 +51,7 @@ export default function CounterStat({ value, label, dark = false }: CounterStatP
       <span className={`text-4xl md:text-5xl font-black tabular-nums tracking-tight ${dark ? "text-white" : "text-charcoal"}`}>
         {prefix}<span>{count}</span>{suffix}
       </span>
-      <span className={`mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${dark ? "text-[#666]" : "text-mid-gray"}`}>
+      <span className={`mt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] ${dark ? "text-[#666]" : labelRed ? "text-brand-red" : "text-mid-gray"}`}>
         {label}
       </span>
     </div>

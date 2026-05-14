@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight, Code2, Cloud, Brain, Smartphone, Zap,
-  CheckCircle, Layers, Shield, TrendingUp, Users, Globe,
+  CheckCircle, Layers, Shield, TrendingUp, Users,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CounterStat from "@/components/CounterStat";
@@ -10,29 +10,28 @@ import LogoCarousel from "@/components/LogoCarousel";
 import QuickForm from "@/components/QuickForm";
 
 export const metadata: Metadata = {
-  title: "TechxServe — Tomorrow's Reality, Today.",
+  title: "TechxServe: Tomorrow's Reality, Today.",
   description:
-    "Fast, secure, and scalable digital products — custom-crafted for businesses that refuse to be held back by outdated technology.",
+    "Fast, secure, and scalable digital products, custom-crafted for businesses that refuse to be held back by outdated technology.",
 };
 
 const services = [
-  { icon: Code2,    title: "Custom Software",        desc: "Bespoke tools engineered around your exact workflows and growth plan.",                   href: "/services#custom-software", span: "lg:col-span-2" },
-  { icon: Cloud,    title: "Cloud & Transformation", desc: "Migrate, modernize, and manage your stack in the cloud — built for scale.",              href: "/services#cloud",           span: "" },
-  { icon: Brain,    title: "AI & Data Analytics",    desc: "Turn raw data into sharp decisions with AI-powered pipelines and dashboards.",           href: "/services#ai-data",         span: "" },
-  { icon: Smartphone, title: "Mobile & Web",         desc: "Pixel-perfect apps and sites that load fast and perform on every device.",               href: "/services#mobile-web",      span: "" },
-  { icon: Zap,      title: "Automation & SaaS",      desc: "Intelligent systems that eliminate repetitive work and free your team to focus on growth.", href: "/services#automation",     span: "lg:col-span-2" },
+  { icon: Code2,    title: "Custom Software",        desc: "Bespoke tools engineered around your exact workflows and growth plan.",                   href: "/services#custom-software" },
+  { icon: Cloud,    title: "Cloud & Transformation", desc: "Migrate, modernize, and manage your stack in the cloud, built for scale.",               href: "/services#cloud"           },
+  { icon: Brain,    title: "AI & Data Analytics",    desc: "Turn raw data into sharp decisions with AI-powered pipelines and dashboards.",           href: "/services#ai-data"         },
+  { icon: Zap,      title: "Automation & SaaS",      desc: "Intelligent systems that eliminate repetitive work and free your team to focus on growth.", href: "/services#automation"    },
+  { icon: Smartphone, title: "Mobile & Web",         desc: "Pixel-perfect apps and sites that load fast and perform on every device.",               href: "/services#mobile-web"      },
 ];
 
 const stats = [
   { value: "25+", label: "Global Clients",      icon: Users   },
-  { value: "15+", label: "Countries Served",    icon: Globe   },
   { value: "98%", label: "Satisfaction Rate",   icon: TrendingUp },
   { value: "3+",  label: "Years Delivering",    icon: Shield  },
 ];
 
 const differentiators = [
   { icon: Shield,     title: "Enterprise Security",    desc: "Security baked in from day one, not bolted on." },
-  { icon: Layers,     title: "End-to-End Delivery",    desc: "From idea to production — we own the whole journey." },
+  { icon: Layers,     title: "End-to-End Delivery",    desc: "From idea to production. We own the whole journey." },
   { icon: TrendingUp, title: "Built to Scale",          desc: "Architectures that grow with you, no rewrites needed." },
   { icon: CheckCircle, title: "Transparent Process",   desc: "Weekly updates, no black boxes, no surprises ever." },
 ];
@@ -60,7 +59,7 @@ export default function HomePage() {
                 <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-brand-red/15 badge-shimmer mb-8">
                   <span className="red-dot" />
                   <span className="text-brand-red text-[11px] font-semibold uppercase tracking-widest">
-                    Trusted by 25+ clients · 15+ countries
+                    Trusted by 25+ global clients
                   </span>
                 </div>
               </AnimatedSection>
@@ -75,7 +74,7 @@ export default function HomePage() {
 
               <AnimatedSection delay={160}>
                 <p className="text-lg text-mid-gray leading-relaxed max-w-xl mb-8">
-                  We build fast, secure, and scalable digital products — custom-crafted for businesses
+                  We build fast, secure, and scalable digital products, custom-crafted for businesses
                   that refuse to be held back by outdated technology.
                 </p>
               </AnimatedSection>
@@ -151,16 +150,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Floating badge 2 */}
-                <div className="floating absolute -bottom-4 -left-6 z-20 bg-white rounded-2xl border border-border-gray shadow-[var(--shadow-md)] px-4 py-3 flex items-center gap-2.5" style={{ animationDelay: "2.2s" }}>
-                  <div className="w-7 h-7 rounded-full bg-brand-red/10 flex items-center justify-center">
-                    <Globe size={14} className="text-brand-red" />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold text-charcoal">15+ Countries</p>
-                    <p className="text-[9px] text-mid-gray">Global client base</p>
-                  </div>
-                </div>
               </div>
             </AnimatedSection>
           </div>
@@ -170,7 +159,7 @@ export default function HomePage() {
         <div className="relative z-10 w-full border-t border-border-gray/60 mt-6 pt-8 pb-10 overflow-hidden bg-white/50 backdrop-blur-sm">
           <div className="max-w-[1280px] mx-auto px-6 mb-5 flex items-center gap-4">
             <div className="h-px flex-1 bg-border-gray" />
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-mid-gray whitespace-nowrap">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-red whitespace-nowrap">
               Trusted By
             </p>
             <div className="h-px flex-1 bg-border-gray" />
@@ -203,9 +192,9 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((s, i) => (
-              <AnimatedSection key={s.title} delay={i * 70} className={s.span}>
+          <div className="flex flex-wrap justify-center gap-5">
+            {services.slice(0, 3).map((s, i) => (
+              <AnimatedSection key={s.title} delay={i * 70} className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.33%-14px)]">
                 <Link href={s.href} className="group card-line card-lift block bg-white rounded-2xl border border-border-gray p-7 h-full">
                   <div className="flex items-start justify-between mb-5">
                     <div className="w-11 h-11 rounded-xl bg-brand-red/8 flex items-center justify-center group-hover:bg-brand-red/14 transition-colors">
@@ -213,6 +202,27 @@ export default function HomePage() {
                     </div>
                     <span className="text-[10px] font-bold text-border-gray group-hover:text-brand-red/40 transition-colors">
                       0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="font-bold text-charcoal text-base mb-2 group-hover:text-brand-red transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="text-mid-gray text-sm leading-relaxed">{s.desc}</p>
+                  <div className="flex items-center gap-1 mt-5 text-xs font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more <ArrowRight size={12} />
+                  </div>
+                </Link>
+              </AnimatedSection>
+            ))}
+            {services.slice(3).map((s, i) => (
+              <AnimatedSection key={s.title} delay={(i + 3) * 70} className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.33%-14px)]">
+                <Link href={s.href} className="group card-line card-lift block bg-white rounded-2xl border border-border-gray p-7 h-full">
+                  <div className="flex items-start justify-between mb-5">
+                    <div className="w-11 h-11 rounded-xl bg-brand-red/8 flex items-center justify-center group-hover:bg-brand-red/14 transition-colors">
+                      <s.icon size={21} className="text-brand-red" />
+                    </div>
+                    <span className="text-[10px] font-bold text-border-gray group-hover:text-brand-red/40 transition-colors">
+                      0{i + 4}
                     </span>
                   </div>
                   <h3 className="font-bold text-charcoal text-base mb-2 group-hover:text-brand-red transition-colors">
@@ -237,15 +247,22 @@ export default function HomePage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-brand-red/60 to-transparent" />
 
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-[#222]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-[#222]">
             {stats.map((s, i) => (
-              <AnimatedSection key={s.label} delay={i * 90} className="flex flex-col items-center text-center md:px-10">
+              <AnimatedSection key={s.label} delay={i * 90} className="flex flex-col items-start text-left px-4 md:px-12">
                 <div className="w-10 h-10 rounded-xl bg-brand-red/12 flex items-center justify-center mb-4">
                   <s.icon size={18} className="text-brand-red" />
                 </div>
                 <CounterStat value={s.value} label={s.label} dark />
               </AnimatedSection>
             ))}
+            <AnimatedSection delay={270} className="flex flex-col items-start text-left px-4 md:px-12">
+               <div className="w-10 h-10 rounded-xl bg-brand-red/12 flex items-center justify-center mb-4">
+                  <ArrowRight size={18} className="text-brand-red" />
+                </div>
+               <p className="text-white/40 text-[10px] font-semibold uppercase tracking-widest mb-1">Impact</p>
+               <p className="text-white text-xl font-bold">Driving Real Growth</p>
+            </AnimatedSection>
           </div>
         </div>
 
@@ -269,7 +286,7 @@ export default function HomePage() {
               </h2>
               <p className="text-mid-gray leading-relaxed mb-10 text-lg">
                 Whether you&apos;re starting from scratch or scaling an existing system, we sit down, understand
-                exactly what you need, and build it — no fluff, no surprises.
+                exactly what you need, and build it. No fluff, no surprises.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -97,8 +97,8 @@ export default function ContactForm() {
             <option>Custom Software</option>
             <option>Cloud & Digital Transformation</option>
             <option>AI & Data Analytics</option>
-            <option>Mobile & Web Engineering</option>
             <option>Automation & SaaS</option>
+            <option>Mobile & Web Engineering</option>
             <option>General Inquiry</option>
           </select>
         </div>

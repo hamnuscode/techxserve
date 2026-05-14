@@ -59,8 +59,8 @@ export default function QuickForm() {
         <option>Custom Software</option>
         <option>Cloud & Digital Transformation</option>
         <option>AI & Data Analytics</option>
-        <option>Mobile & Web Engineering</option>
         <option>Automation & SaaS</option>
+        <option>Mobile & Web Engineering</option>
         <option>Other</option>
       </select>
       <textarea
