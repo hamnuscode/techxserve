@@ -53,17 +53,15 @@ export default function AboutPage() {
         <div className="absolute top-16 right-[6%] w-80 h-80 bg-brand-red/5 blob rounded-full pointer-events-none" />
 
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row-reverse md:items-end justify-between gap-8 md:gap-16">
-            <AnimatedSection className="max-w-2xl text-left md:text-right">
+          <div className="max-w-3xl">
+            <AnimatedSection className="ml-[10px]">
               <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">
                 Our Story
               </p>
-              <h1 className="text-[58px] sm:text-[72px] font-black text-charcoal leading-[0.92] tracking-[-2px] mb-0">
+              <h1 className="text-[58px] sm:text-[72px] font-black text-charcoal leading-[0.92] tracking-[-2px] mb-7">
                 Built to Build<br />the <span className="gradient-text">Future.</span>
               </h1>
-            </AnimatedSection>
-            <AnimatedSection delay={100} className="max-w-xl mb-2">
-              <p className="text-xl text-mid-gray leading-relaxed">
+              <p className="text-xl text-mid-gray leading-relaxed max-w-xl">
                 We&apos;re a team of engineers, designers, and problem-solvers on a mission to eliminate the
                 technological barriers holding great businesses back.
               </p>

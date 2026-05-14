@@ -104,21 +104,15 @@ export default function ServicesPage() {
         <div className="absolute inset-0 dot-bg opacity-40 pointer-events-none" />
         <div className="absolute top-20 right-[5%] w-72 h-72 bg-brand-red/5 blob rounded-full pointer-events-none" />
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row-reverse md:items-end justify-between gap-8 md:gap-16">
-            <AnimatedSection className="max-w-2xl text-left md:text-right">
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">
-                What We Do
-              </p>
-              <h1 className="text-[58px] sm:text-[72px] font-black text-charcoal leading-[0.92] tracking-[-2px] mb-0">
-                Everything You Need<br />to <span className="gradient-text">Build, Scale,</span><br />and Dominate.
-              </h1>
-            </AnimatedSection>
-            <AnimatedSection delay={100} className="max-w-xl mb-2">
-              <p className="text-xl text-mid-gray leading-relaxed">
-                Five core practice areas. One focused team. Outcomes that move the needle.
-              </p>
-            </AnimatedSection>
-          </div>
+          <AnimatedSection className="max-w-3xl ml-[10px]">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">What We Do</p>
+            <h1 className="text-[58px] sm:text-[72px] font-black text-charcoal leading-[0.92] tracking-[-2px] mb-7">
+              Everything You Need<br />to <span className="gradient-text">Build, Scale,</span><br />and Dominate.
+            </h1>
+            <p className="text-xl text-mid-gray max-w-lg">
+              Five core practice areas. One focused team. Outcomes that move the needle.
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
