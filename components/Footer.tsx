@@ -20,25 +20,25 @@ const serviceLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#0e0e0e] text-white border-t border-[#1e1e1e]">
-      <div className="max-w-[1280px] mx-auto px-6 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+      <div className="max-w-[1280px] mx-auto px-6 py-10">
+        <div className="ml-[85px] grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
 
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-3">
+          {/* Brand & Contact */}
+          <div className="col-span-2 lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <span className="w-7 h-7 rounded-md bg-brand-red flex items-center justify-center text-white font-black text-xs shadow-[0_2px_8px_rgba(204,0,0,0.5)]">TXS</span>
               <span className="font-bold text-[15px] tracking-tight">Tech<span className="text-brand-red">x</span>Serve</span>
             </Link>
-            <p className="text-[#a1a1aa] text-xs italic mb-4">Tomorrow&apos;s Reality, Today.</p>
-            <div className="flex flex-col gap-2.5">
+            <p className="text-[#a1a1aa] text-xs italic mb-5 max-w-[240px]">Tomorrow&apos;s Reality, Today. We build technology that works, so you can focus on building your business.</p>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
               <a href="tel:+13072939151" className="flex items-center gap-2 text-[#a1a1aa] text-xs hover:text-white transition-colors">
                 <Phone size={12} className="text-brand-red" />+1 (307) 293-9151
               </a>
               <a href="mailto:info@techxserve.com" className="flex items-center gap-2 text-[#a1a1aa] text-xs hover:text-white transition-colors">
                 <Mail size={12} className="text-brand-red" />info@techxserve.com
               </a>
-              <span className="flex items-start gap-2 text-[#a1a1aa] text-xs">
-                <MapPin size={12} className="text-brand-red mt-0.5 shrink-0" />Sheridan, WY · Islamabad, PK
+              <span className="flex items-center gap-2 text-[#a1a1aa] text-xs">
+                <MapPin size={12} className="text-brand-red" />WY, USA · PK
               </span>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-[#d4d4d8] mb-4">Company</p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {quickLinks.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-[#a1a1aa] text-xs hover:text-white transition-colors">
@@ -60,7 +60,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-[#d4d4d8] mb-4">Services</p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {serviceLinks.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-[#a1a1aa] text-xs hover:text-white transition-colors">
@@ -71,10 +71,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social + tagline */}
+          {/* Social */}
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-widest text-[#d4d4d8] mb-4">Connect</p>
-            <div className="flex gap-2 mb-5">
+            <div className="flex gap-2">
               {[
                 {
                   label: "LinkedIn", href: "#",
@@ -99,22 +99,22 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <p className="text-[#888] text-[11px] leading-relaxed">
-              We build technology that works, so you can focus on building your business.
-            </p>
           </div>
         </div>
       </div>
 
       <div className="border-t border-[#181818]">
-        <div className="max-w-[1280px] mx-auto px-6 py-3.5 flex items-center justify-between">
-          <p className="text-[#71717a] text-[11px]">© 2025 TechxServe. All rights reserved.</p>
-          <div className="flex items-center gap-1.5">
-            <span className="red-dot w-1.5 h-1.5" />
-            <span className="text-[#71717a] text-[11px]">Live & Building</span>
+        <div className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="ml-[85px] w-full flex items-center justify-between">
+            <p className="text-[#71717a] text-[11px]">© 2025 TechxServe Enterprise LLC. All rights reserved.</p>
+            <div className="flex items-center gap-1.5">
+              <span className="red-dot w-1.5 h-1.5" />
+              <span className="text-[#71717a] text-[11px]">Live & Building</span>
+            </div>
           </div>
         </div>
       </div>
+>
     </footer>
   );
 }
