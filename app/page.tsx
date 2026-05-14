@@ -157,11 +157,12 @@ export default function HomePage() {
 
         {/* ── Trusted By carousel (in hero) ── */}
         <div className="relative z-10 w-full border-t border-border-gray/60 mt-6 pt-8 pb-10 overflow-hidden bg-white/50 backdrop-blur-sm">
-          <div className="max-w-[1280px] mx-auto px-6 mb-8 flex items-center gap-3">
+          <div className="max-w-[1280px] mx-auto px-6 mb-5 flex items-center gap-4">
+            <div className="h-px flex-1 bg-border-gray" />
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-charcoal whitespace-nowrap">
               Trusted By
             </p>
-            <div className="h-px w-20 bg-border-gray" />
+            <div className="h-px flex-1 bg-border-gray" />
           </div>
           <LogoCarousel />
         </div>
