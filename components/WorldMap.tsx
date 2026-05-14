@@ -244,10 +244,7 @@ export default function WorldMap() {
         {/* Stat overlays — repositioned for cropped viewBox */}
         {visible && (
           <g>
-            <rect x="38" y="368" width="136" height="46" rx="7" fill="white" opacity="0.9" />
-            <text x="50" y="384" fontSize="7" fill="#888" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.08em">GLOBAL REACH</text>
-            <text x="50" y="400" fontSize="13" fill="#111" fontFamily="Inter, sans-serif" fontWeight="800">15+ Countries</text>
-            <text x="50" y="410" fontSize="7" fill="#CC0000" fontFamily="Inter, sans-serif" fontWeight="600">25+ Active Clients</text>
+
 
             <rect x="826" y="368" width="136" height="46" rx="7" fill="white" opacity="0.9" />
             <text x="840" y="384" fontSize="7" fill="#888" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.08em">SATISFACTION</text>
