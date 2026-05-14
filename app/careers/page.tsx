@@ -96,14 +96,14 @@ export default function CareersPage() {
       {/* ── Open Application ── */}
       <section className="py-20 bg-white border-t border-border-gray">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="ml-[85px]">
+          <AnimatedSection className="flex flex-col items-center text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-red/8 mb-6">
               <Rocket size={28} className="text-brand-red" />
             </div>
             <h2 className="text-3xl font-black text-charcoal tracking-tight mb-3">
               Don&apos;t See Your Role?
             </h2>
-            <p className="text-mid-gray mb-8 max-w-md">
+            <p className="text-mid-gray mb-8 max-w-md mx-auto">
               We hire for talent, not just titles. Reach out and tell us what you&apos;re great at.
             </p>
             <a
