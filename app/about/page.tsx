@@ -120,11 +120,11 @@ export default function AboutPage() {
       {/* ── Vision & Mission ── */}
       <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-14">
+          <AnimatedSection className="mb-14 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Purpose</p>
             <h2 className="text-4xl md:text-5xl font-black text-charcoal tracking-tight">Vision &amp; Mission</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ml-[85px]">
             {[
               {
                 num: "01",
@@ -155,7 +155,7 @@ export default function AboutPage() {
       {/* ── Global Presence Map ── */}
       <section className="py-24 bg-off-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-12">
+          <AnimatedSection className="mb-12 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">
               Global Presence
             </p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
               Headquartered in Sheridan, WY with a development hub in Islamabad, serving clients globally.
             </p>
           </AnimatedSection>
-          <AnimatedSection>
+          <AnimatedSection className="ml-[85px]">
             <WorldMap />
           </AnimatedSection>
         </div>
@@ -175,11 +175,11 @@ export default function AboutPage() {
       {/* ── Core Values ── */}
       <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-14">
+          <AnimatedSection className="mb-14 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Values</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">What Drives Us</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ml-[85px]">
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 100}>
                 <div className="card-lift card-line bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
@@ -200,11 +200,11 @@ export default function AboutPage() {
       {/* ── How We Work ── */}
       <section className="py-24 bg-off-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-16">
+          <AnimatedSection className="mb-16 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Process</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">How We Work</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 ml-[85px]">
             {steps.map((step, i) => (
               <AnimatedSection key={step.n} delay={i * 80}>
                 <div className="relative bg-white rounded-2xl border border-border-gray p-6 h-full flex flex-col gap-3 hover:border-brand-red/30 hover:shadow-[var(--shadow-md)] transition-all duration-300">
@@ -224,11 +224,11 @@ export default function AboutPage() {
       {/* ── Why Choose ── */}
       <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-14">
+          <AnimatedSection className="mb-14 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Why Us</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Why Choose TechxServe</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-[85px]">
             {whyPoints.slice(0, 3).map((pt, i) => (
               <AnimatedSection key={pt.title} delay={i * 70}>
                 <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
@@ -243,7 +243,7 @@ export default function AboutPage() {
               </AnimatedSection>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-5 mt-5">
+          <div className="flex flex-wrap justify-center gap-5 mt-5 ml-[85px]">
             {whyPoints.slice(3).map((pt, i) => (
               <AnimatedSection key={pt.title} delay={(i + 3) * 70} className="w-full md:w-[calc(50%-10px)] lg:w-[calc(33.33%-14px)]">
                 <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
@@ -264,7 +264,7 @@ export default function AboutPage() {
       {/* ── Industries ── */}
       <section className="py-14 bg-off-white border-y border-border-gray">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection>
+          <AnimatedSection className="ml-[85px]">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-mid-gray mb-6">Industries Served</p>
             <div className="flex flex-wrap justify-center gap-3">
               {industries.map((ind) => (
