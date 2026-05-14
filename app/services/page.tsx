@@ -130,7 +130,7 @@ export default function ServicesPage() {
                   }`}
                 >
                   {/* Text */}
-                  <div>
+                  <div className="ml-[85px]">
                     <div className="flex items-center gap-3 mb-6">
                       <span className="text-[11px] font-black text-brand-red/30 tracking-widest">{svc.num}</span>
                       <div className="w-9 h-9 rounded-xl bg-brand-red/8 flex items-center justify-center">
