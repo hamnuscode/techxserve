@@ -150,9 +150,8 @@ function ProjectCard({
 
 function CaseStudyDetail({ project }: { project: Project }) {
   return (
-    <div className="border-run rounded-2xl bg-white overflow-hidden">
-      {/* Inner white fill so the running border shows only at the edge */}
-      <div className="rounded-[14px] overflow-hidden border border-transparent">
+    <div className="rounded-2xl bg-white overflow-hidden border border-border-gray">
+      <div>
 
         {/* Top bar */}
         <div className="flex items-center justify-between px-10 py-5 border-b border-border-gray bg-off-white">
