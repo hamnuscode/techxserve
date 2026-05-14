@@ -125,12 +125,12 @@ export default function ServicesPage() {
               <AnimatedSection key={svc.id}>
                 <div
                   id={svc.id}
-                  className={`py-20 border-b border-border-gray last:border-0 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center ${
+                  className={`py-20 border-b border-border-gray last:border-0 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center ml-[85px] ${
                     flip ? "lg:[&>*:first-child]:order-last" : ""
                   }`}
                 >
                   {/* Text */}
-                  <div className="ml-[85px]">
+                  <div>
                     <div className="flex items-center gap-3 mb-6">
                       <span className="text-[11px] font-black text-brand-red/30 tracking-widest">{svc.num}</span>
                       <div className="w-9 h-9 rounded-xl bg-brand-red/8 flex items-center justify-center">
