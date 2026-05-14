@@ -157,13 +157,17 @@ export default function HomePage() {
 
         {/* ── Trusted By carousel (in hero) ── */}
         <div className="relative z-10 w-full border-t border-border-gray/60 mt-6 pt-8 pb-10 overflow-hidden bg-white/50 backdrop-blur-sm">
-          <div className="max-w-[1280px] mx-auto px-6 mb-5 flex items-center gap-4 ml-[85px]">
+          <div className="max-w-[1280px] mx-auto px-6 mb-5 flex items-center gap-4">
+            <div className="ml-[85px] w-full flex items-center gap-4">
+
             <div className="h-px flex-1 bg-border-gray" />
             <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-charcoal whitespace-nowrap">
               Trusted By
             </p>
             <div className="h-px flex-1 bg-border-gray" />
+            </div>
           </div>
+
           <div className="ml-[85px]">
             <LogoCarousel />
           </div>
@@ -175,7 +179,9 @@ export default function HomePage() {
           SERVICES — bento grid
       ══════════════════════════════════ */}
       <section className="py-24 bg-off-white">
-        <div className="max-w-[1280px] mx-auto px-6 ml-[85px]">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="ml-[85px]">
+
           <AnimatedSection className="mb-14">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
@@ -240,6 +246,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </div>
       </section>
 
       {/* ══════════════════════════════════
@@ -249,7 +256,9 @@ export default function HomePage() {
         <div className="absolute inset-0 dot-bg opacity-[0.06] pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-brand-red/60 to-transparent" />
 
-        <div className="relative max-w-[1280px] mx-auto px-6 ml-[85px]">
+        <div className="relative max-w-[1280px] mx-auto px-6">
+          <div className="ml-[85px]">
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-[#222]">
             {stats.map((s, i) => (
               <AnimatedSection key={s.label} delay={i * 90} className="flex flex-col items-start text-left px-4 md:px-12">
@@ -266,7 +275,9 @@ export default function HomePage() {
                <p className="text-white/40 text-[10px] font-semibold uppercase tracking-widest mb-1">Impact</p>
                <p className="text-white text-xl font-bold">Driving Real Growth</p>
             </AnimatedSection>
-          </div>
+            </div>
+        </div>
+
         </div>
 
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-brand-red/40 to-transparent" />
@@ -276,7 +287,9 @@ export default function HomePage() {
           DIFFERENTIATORS + FORM
       ══════════════════════════════════ */}
       <section className="py-24 bg-white">
-        <div className="max-w-[1280px] mx-auto px-6 ml-[85px]">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="ml-[85px]">
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
             {/* Left */}
@@ -331,7 +344,9 @@ export default function HomePage() {
               </div>
             </AnimatedSection>
           </div>
+          </div>
         </div>
+
       </section>
     </>
   );
