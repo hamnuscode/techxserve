@@ -150,74 +150,85 @@ function ProjectCard({
 
 function CaseStudyDetail({ project }: { project: Project }) {
   return (
-    <div className="rounded-2xl border border-border-gray bg-white overflow-hidden">
-      {/* Top bar */}
-      <div className="flex items-center gap-3 px-8 py-4 border-b border-border-gray bg-off-white">
-        <div className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-        <p className="text-[10px] font-bold uppercase tracking-widest text-mid-gray">
-          Case Study — {project.name}
-        </p>
-      </div>
+    <div className="border-run rounded-2xl bg-white overflow-hidden">
+      {/* Inner white fill so the running border shows only at the edge */}
+      <div className="rounded-[14px] overflow-hidden border border-transparent">
 
-      <div className="p-8 grid grid-cols-1 md:grid-cols-2 gap-10">
-        {/* Left: Overview + screenshots */}
-        <div className="space-y-6">
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-3">Overview</p>
-            <p className="text-charcoal/75 text-sm leading-relaxed">{project.overview}</p>
-          </div>
-
-          {/* Screenshot placeholders */}
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-3">Screenshots</p>
-            <div className="grid grid-cols-3 gap-2">
-              {project.photos.map((ph) => (
-                <div
-                  key={ph}
-                  className="aspect-video rounded-lg bg-off-white border border-border-gray flex flex-col items-center justify-center gap-1"
-                >
-                  <div className="w-5 h-5 rounded bg-border-gray/70 flex items-center justify-center">
-                    <span className="text-[6px] font-bold text-mid-gray">IMG</span>
-                  </div>
-                  <span className="text-[8px] text-mid-gray text-center leading-tight px-1">{ph}</span>
-                </div>
-              ))}
+        {/* Top bar */}
+        <div className="flex items-center justify-between px-10 py-5 border-b border-border-gray bg-off-white">
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-lg bg-brand-red/8 border border-brand-red/15 flex items-center justify-center">
+              <span className="text-brand-red text-[10px] font-black">{project.initials}</span>
             </div>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-charcoal">
+              {project.name} — Case Study
+            </p>
           </div>
+          <p className="text-[10px] text-mid-gray font-medium hidden sm:block">{project.tag}</p>
         </div>
 
-        {/* Right: What we built */}
-        <div className="space-y-6">
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-3">What We Built</p>
-            <ul className="space-y-2.5">
-              {project.built.map((item) => (
-                <li key={item} className="flex items-start gap-2.5">
-                  <CheckCircle size={13} className="text-brand-red mt-[3px] shrink-0" />
-                  <span className="text-charcoal/75 text-sm leading-snug">{item}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="p-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left: Overview + screenshots */}
+          <div className="space-y-8">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-3">Overview</p>
+              <p className="text-charcoal/70 text-[15px] leading-relaxed">{project.overview}</p>
+            </div>
+
+            {/* Screenshot placeholders */}
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-4">Screenshots</p>
+              <div className="grid grid-cols-3 gap-3">
+                {project.photos.map((ph) => (
+                  <div
+                    key={ph}
+                    className="aspect-video rounded-xl bg-off-white border border-border-gray flex flex-col items-center justify-center gap-1.5"
+                  >
+                    <div className="w-7 h-7 rounded-md bg-border-gray/60 flex items-center justify-center">
+                      <span className="text-[7px] font-bold text-mid-gray">IMG</span>
+                    </div>
+                    <span className="text-[9px] text-mid-gray text-center leading-tight px-1">{ph}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Live link */}
-          <div className="pt-4 border-t border-border-gray">
-            {project.liveLink ? (
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-red text-white text-xs font-semibold rounded-xl hover:bg-brand-red-dark transition-colors"
-              >
-                Visit Live <ExternalLink size={12} />
-              </a>
-            ) : (
-              <p className="text-mid-gray text-xs">
-                {project.id === "ispr" || project.id === "police-foundation"
-                  ? "Internal system — not publicly accessible"
-                  : "Live link coming soon"}
-              </p>
-            )}
+          {/* Right: What we built + link */}
+          <div className="space-y-8">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-4">What We Built</p>
+              <ul className="space-y-4">
+                {project.built.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle size={15} className="text-brand-red mt-[2px] shrink-0" />
+                    <span className="text-charcoal/75 text-[15px] leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="pt-5 border-t border-border-gray">
+              {project.liveLink ? (
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-xl hover:bg-brand-red-dark transition-colors"
+                >
+                  Visit Live <ExternalLink size={13} />
+                </a>
+              ) : (
+                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-off-white border border-border-gray">
+                  <div className="w-1.5 h-1.5 rounded-full bg-mid-gray/40" />
+                  <p className="text-mid-gray text-xs">
+                    {project.id === "ispr" || project.id === "police-foundation"
+                      ? "Internal system — not publicly accessible"
+                      : "Live link coming soon"}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -258,9 +269,9 @@ export default function ProductsGrid() {
 
             {/* Inline dropdown detail */}
             <div
-              className="overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+              className="overflow-hidden transition-all duration-[550ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               style={{
-                maxHeight: active ? "600px" : "0px",
+                maxHeight: active ? "1000px" : "0px",
                 opacity: active ? 1 : 0,
               }}
             >
