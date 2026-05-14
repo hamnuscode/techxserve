@@ -54,7 +54,7 @@ export default function AboutPage() {
 
         <div className="relative max-w-[1280px] mx-auto px-6">
           <div className="max-w-3xl">
-            <AnimatedSection className="ml-[100px]">
+            <AnimatedSection className="ml-[85px]">
               <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">
                 Our Story
               </p>

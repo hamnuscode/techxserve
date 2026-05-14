@@ -41,7 +41,7 @@ export default function CareersPage() {
         <div className="absolute inset-0 dot-bg opacity-40 pointer-events-none" />
         <div className="absolute top-16 right-[6%] w-72 h-72 bg-brand-red/5 blob rounded-full pointer-events-none" />
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="max-w-3xl ml-[100px]">
+          <AnimatedSection className="max-w-3xl ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">Join Us</p>
             <h1 className="text-[58px] sm:text-[72px] font-black text-charcoal leading-[0.92] tracking-[-2px] mb-7">
               Build the Future<br /><span className="gradient-text">With Us.</span>
