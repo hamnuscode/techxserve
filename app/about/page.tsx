@@ -53,8 +53,8 @@ export default function AboutPage() {
         <div className="absolute top-16 right-[6%] w-80 h-80 bg-brand-red/5 blob rounded-full pointer-events-none" />
 
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-16">
-            <AnimatedSection className="max-w-2xl">
+          <div className="flex flex-col md:flex-row-reverse md:items-end justify-between gap-8 md:gap-16">
+            <AnimatedSection className="max-w-2xl text-left md:text-right">
               <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">
                 Our Story
               </p>

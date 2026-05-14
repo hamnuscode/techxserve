@@ -26,19 +26,18 @@ export default function ContactPage() {
         <div className="absolute inset-0 dot-bg opacity-40 pointer-events-none" />
         <div className="absolute bottom-0 left-[5%] w-80 h-80 bg-brand-red/5 blob rounded-full pointer-events-none" />
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-16">
-            <AnimatedSection className="max-w-2xl">
+          <div className="flex flex-col md:flex-row-reverse md:items-end justify-between gap-8 md:gap-16">
+            <AnimatedSection className="max-w-2xl text-left md:text-right">
               <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">
                 Get in Touch
               </p>
               <h1 className="text-[58px] sm:text-[72px] font-black text-charcoal leading-[0.92] tracking-[-2px] mb-0">
-                Let&apos;s Build the<br />Future of <span className="gradient-text">Digital.</span>
+                Let&apos;s Build the<br /><span className="gradient-text">Future</span> of Digital.
               </h1>
             </AnimatedSection>
             <AnimatedSection delay={100} className="max-w-xl mb-2">
               <p className="text-xl text-mid-gray leading-relaxed">
-                Whether you have a project brief ready or just an idea, we want to hear from you. Reach
-                out and we&apos;ll get back to you within one business day.
+                Whether you have a project brief ready or just an idea, we want to hear from you. Reach out and we&apos;ll get back to you within one business day.
               </p>
             </AnimatedSection>
           </div>
