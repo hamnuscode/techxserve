@@ -26,7 +26,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 dot-bg opacity-40 pointer-events-none" />
         <div className="absolute bottom-0 left-[5%] w-80 h-80 bg-brand-red/5 blob rounded-full pointer-events-none" />
         <div className="relative max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="max-w-3xl ml-[50px]">
+          <AnimatedSection className="max-w-3xl ml-[100px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-5">
               Get in Touch
             </p>
