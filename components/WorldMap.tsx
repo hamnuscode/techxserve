@@ -15,13 +15,13 @@ const locations = [
 ];
 
 const connections = [
-  { from: "hq",  to: "ny",      dur: 3.2 },
-  { from: "hq",  to: "london",  dur: 3.6 },
-  { from: "hq",  to: "lagos",   dur: 4.0 },
-  { from: "dev", to: "bahrain", dur: 2.8 },
-  { from: "dev", to: "dubai",   dur: 3.0 },
-  { from: "dev", to: "sg",      dur: 3.4 },
-  { from: "dev", to: "sydney",  dur: 4.2 },
+  { from: "hq",  to: "ny",      dur: 3.4 },
+  { from: "hq",  to: "london",  dur: 4.0 },
+  { from: "hq",  to: "lagos",   dur: 4.5 },
+  { from: "dev", to: "bahrain", dur: 3.0 },
+  { from: "dev", to: "dubai",   dur: 3.2 },
+  { from: "dev", to: "sg",      dur: 3.8 },
+  { from: "dev", to: "sydney",  dur: 4.8 },
 ];
 
 function getPos(id: string) {
@@ -32,7 +32,7 @@ function curvePath(from: string, to: string) {
   const f = getPos(from);
   const t = getPos(to);
   const mx = (f.x + t.x) / 2;
-  const my = Math.min(f.y, t.y) - 70;
+  const my = Math.min(f.y, t.y) - 60;
   return `M ${f.x} ${f.y} Q ${mx} ${my} ${t.x} ${t.y}`;
 }
 
@@ -52,50 +52,36 @@ export default function WorldMap() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl border border-border-gray shadow-md bg-[#F2F4F7]">
+    <div className="max-w-4xl mx-auto relative overflow-hidden rounded-2xl border border-border-gray shadow-sm bg-[#F3F5F8]">
       {/* Legend */}
-      <div className="absolute top-4 left-5 z-10 flex flex-col gap-2">
+      <div className="absolute top-3 left-4 z-10 flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-brand-red shadow-[0_0_8px_rgba(204,0,0,0.6)]" />
-          <span className="text-[10px] font-semibold text-charcoal">Headquarters + Dev Office</span>
+          <span className="w-2 h-2 rounded-full bg-brand-red" />
+          <span className="text-[9px] font-semibold text-charcoal/80">HQ + Dev Office</span>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-charcoal/40" />
-          <span className="text-[10px] text-mid-gray">Active Client Regions</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="w-4 h-px bg-brand-red/60" />
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
-          <span className="text-[10px] text-mid-gray">Live Signal</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#7A7A8A]" />
+          <span className="text-[9px] text-mid-gray">Client Regions</span>
         </div>
       </div>
 
       <svg
         ref={ref}
-        viewBox="0 0 1000 480"
+        viewBox="30 28 940 400"
         className="w-full h-auto"
         aria-label="Global presence map"
       >
         <defs>
-          {/* Glow filter for beam dots */}
-          <filter id="beam-glow" x="-150%" y="-150%" width="400%" height="400%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+          {/* Subtle glow for beam dots */}
+          <filter id="beam-glow" x="-200%" y="-200%" width="500%" height="500%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
 
-          {/* Sharper glow for main HQ dots */}
-          <filter id="hq-glow" x="-100%" y="-100%" width="300%" height="300%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-
-          {/* Path definitions for animateMotion */}
+          {/* Path definitions */}
           {connections.map(({ from, to }) => (
             <path
               key={`def-${from}-${to}`}
@@ -106,82 +92,106 @@ export default function WorldMap() {
         </defs>
 
         {/* Ocean */}
-        <rect width="1000" height="480" fill="#EEF1F6" />
+        <rect x="0" y="0" width="1000" height="480" fill="#EBEEf4" />
 
-        {/* Continents */}
-        <g fill="#D8DCE6" stroke="#C8CDD8" strokeWidth="0.8">
+        {/* ── Continents — more detailed paths ── */}
+        <g fill="#D2D6E2" stroke="#BFC4D2" strokeWidth="0.6">
+
+          {/* Alaska */}
+          <path d="M 60,95 L 78,82 L 100,80 L 118,88 L 120,102 L 105,110 L 85,112 L 68,106 Z" />
+
           {/* North America */}
-          <path d="M 60,115 L 105,85 L 135,90 L 170,78 L 205,65 L 250,68 L 285,85 L 310,110 L 330,145 L 315,200 L 290,230 L 260,215 L 230,215 L 218,230 L 195,240 L 170,220 L 150,200 L 125,188 L 98,175 Z" />
+          <path d="M 100,95 L 130,80 L 162,72 L 200,62 L 245,64 L 278,78 L 305,100 L 322,128 L 325,158 L 312,195 L 295,222 L 270,228 L 248,220 L 230,228 L 210,238 L 188,228 L 165,210 L 142,198 L 118,188 L 98,172 L 88,148 Z" />
+
           {/* Greenland */}
-          <path d="M 268,42 L 320,28 L 360,38 L 372,62 L 350,90 L 308,96 L 278,78 Z" />
+          <path d="M 272,38 L 315,26 L 355,34 L 375,56 L 368,80 L 345,95 L 310,98 L 280,82 L 268,60 Z" />
+
+          {/* Central America */}
+          <path d="M 210,238 L 235,238 L 248,252 L 240,265 L 225,268 L 210,255 Z" />
+
           {/* South America */}
-          <path d="M 200,242 L 240,232 L 295,235 L 322,255 L 325,295 L 308,355 L 285,418 L 255,440 L 228,412 L 215,362 L 210,310 L 215,270 Z" />
-          {/* Europe */}
-          <path d="M 448,95 L 478,88 L 513,82 L 545,88 L 560,105 L 558,130 L 540,152 L 508,165 L 472,162 L 450,145 L 442,122 Z" />
+          <path d="M 205,265 L 238,252 L 278,248 L 310,255 L 328,272 L 332,305 L 320,348 L 305,390 L 285,425 L 258,438 L 232,420 L 218,388 L 212,348 L 208,308 L 210,280 Z" />
+
+          {/* Iceland */}
+          <path d="M 410,68 L 432,62 L 448,70 L 445,82 L 428,86 L 412,80 Z" />
+
           {/* British Isles */}
-          <path d="M 455,98 L 468,92 L 472,105 L 462,115 L 453,110 Z" />
+          <path d="M 452,96 L 464,90 L 474,96 L 475,110 L 465,118 L 452,112 Z" />
+          <path d="M 444,108 L 452,104 L 454,115 L 446,120 L 440,114 Z" />
+
+          {/* Scandinavia */}
+          <path d="M 490,58 L 505,50 L 525,52 L 548,62 L 558,78 L 550,95 L 535,105 L 515,108 L 500,100 L 488,84 L 486,70 Z" />
+
+          {/* Europe — with Iberian + Italian bumps */}
+          <path d="M 446,108 L 470,100 L 498,95 L 530,95 L 558,100 L 568,118 L 565,138 L 548,152 L 522,162 L 495,165 L 470,162 L 452,150 L 444,132 Z" />
+
+          {/* Iberian Peninsula */}
+          <path d="M 430,128 L 458,122 L 468,135 L 464,158 L 448,168 L 430,162 L 423,148 L 425,134 Z" />
+
+          {/* Italian Peninsula */}
+          <path d="M 510,148 L 525,152 L 530,168 L 528,192 L 518,205 L 508,198 L 505,180 L 506,160 Z" />
+
           {/* Africa */}
-          <path d="M 446,158 L 536,153 L 565,172 L 580,215 L 570,290 L 550,360 L 510,400 L 478,398 L 458,372 L 448,308 L 446,248 L 452,200 Z" />
+          <path d="M 444,162 L 485,155 L 535,152 L 562,168 L 575,195 L 578,228 L 572,268 L 558,312 L 540,358 L 516,395 L 490,405 L 465,398 L 448,372 L 440,332 L 438,285 L 442,242 L 446,200 Z" />
+
+          {/* Madagascar */}
+          <path d="M 575,310 L 585,302 L 595,318 L 592,348 L 578,358 L 568,342 L 570,318 Z" />
+
           {/* Middle East */}
-          <path d="M 548,152 L 600,148 L 628,162 L 638,192 L 625,215 L 590,220 L 562,205 L 552,178 Z" />
-          {/* Asia */}
-          <path d="M 548,95 L 590,85 L 645,68 L 700,62 L 770,65 L 830,88 L 880,105 L 915,135 L 918,200 L 888,255 L 845,282 L 800,292 L 755,285 L 718,272 L 680,255 L 645,232 L 622,215 L 600,215 L 580,215 L 563,200 L 555,175 L 548,148 Z" />
+          <path d="M 548,150 L 578,145 L 608,148 L 632,160 L 642,182 L 635,205 L 615,215 L 588,218 L 565,205 L 552,185 L 548,165 Z" />
+
+          {/* Asia — main body */}
+          <path d="M 548,95 L 582,82 L 628,68 L 680,60 L 735,58 L 790,62 L 840,78 L 878,98 L 908,128 L 915,165 L 908,205 L 885,248 L 848,278 L 808,292 L 768,288 L 730,278 L 700,262 L 668,248 L 645,228 L 625,215 L 605,215 L 585,212 L 568,200 L 558,178 L 548,152 Z" />
+
           {/* India */}
-          <path d="M 635,190 L 670,182 L 700,185 L 715,205 L 715,240 L 695,268 L 672,270 L 652,248 L 638,218 Z" />
+          <path d="M 638,185 L 668,178 L 698,180 L 716,200 L 718,228 L 708,255 L 692,272 L 672,275 L 652,252 L 640,225 L 635,200 Z" />
+
+          {/* Sri Lanka */}
+          <path d="M 690,278 L 698,272 L 703,282 L 698,292 L 690,288 Z" />
+
           {/* SE Asia */}
-          <path d="M 718,265 L 762,258 L 790,270 L 805,295 L 785,308 L 750,305 L 722,290 Z" />
+          <path d="M 718,265 L 755,255 L 790,262 L 808,282 L 802,305 L 778,312 L 748,308 L 722,292 Z" />
+
+          {/* Korean peninsula */}
+          <path d="M 830,128 L 848,122 L 862,135 L 858,152 L 842,158 L 828,148 Z" />
+
           {/* Japan */}
-          <path d="M 855,142 L 880,136 L 892,152 L 888,172 L 868,175 L 852,160 Z" />
+          <path d="M 858,118 L 878,112 L 892,122 L 898,138 L 888,152 L 872,158 L 858,148 L 852,132 Z" />
+          <path d="M 875,162 L 885,158 L 892,168 L 888,180 L 878,182 L 872,172 Z" />
+
           {/* Australia */}
-          <path d="M 748,332 L 818,315 L 875,318 L 908,342 L 918,385 L 882,415 L 830,418 L 778,415 L 748,388 Z" />
-          {/* New Zealand */}
-          <path d="M 930,378 L 948,370 L 952,395 L 935,408 L 922,398 Z" />
+          <path d="M 752,328 L 808,312 L 862,312 L 905,332 L 922,362 L 918,398 L 895,422 L 848,428 L 798,425 L 758,415 L 738,388 L 742,358 L 748,338 Z" />
+
+          {/* Tasmania */}
+          <path d="M 828,435 L 842,430 L 850,440 L 845,452 L 830,452 L 824,442 Z" />
+
+          {/* New Zealand north */}
+          <path d="M 928,368 L 942,360 L 952,372 L 948,388 L 935,392 L 924,382 Z" />
+          {/* New Zealand south */}
+          <path d="M 935,395 L 948,390 L 955,405 L 950,422 L 936,428 L 928,415 Z" />
         </g>
 
-        {/* ── Base connection lines (faint) ── */}
+        {/* ── Base connection lines ── */}
         {connections.map(({ from, to }) => (
           <use
             key={`base-${from}-${to}`}
             href={`#conn-${from}-${to}`}
             fill="none"
             stroke="#CC0000"
-            strokeWidth="0.8"
-            opacity={visible ? 0.18 : 0}
-            style={{ transition: "opacity 1s ease" }}
+            strokeWidth="0.7"
+            opacity={visible ? 0.14 : 0}
+            style={{ transition: "opacity 1.2s ease" }}
           />
         ))}
 
-        {/* ── Animated beam dots ── */}
+        {/* ── Animated beam dots — single clean dot per route ── */}
         {visible && connections.map(({ from, to, dur }, i) => (
           <g key={`beam-${from}-${to}`}>
-            {/* Outer glow halo */}
-            <circle r="6" fill="#CC0000" opacity="0.18" filter="url(#beam-glow)">
+            <circle r="2" fill="#CC0000" opacity="0.85" filter="url(#beam-glow)">
               <animateMotion
                 dur={`${dur}s`}
                 repeatCount="indefinite"
-                begin={`${i * 0.55}s`}
-              >
-                <mpath href={`#conn-${from}-${to}`} />
-              </animateMotion>
-            </circle>
-
-            {/* Main bright dot */}
-            <circle r="2.8" fill="#CC0000" opacity="0.95" filter="url(#beam-glow)">
-              <animateMotion
-                dur={`${dur}s`}
-                repeatCount="indefinite"
-                begin={`${i * 0.55}s`}
-              >
-                <mpath href={`#conn-${from}-${to}`} />
-              </animateMotion>
-            </circle>
-
-            {/* Second pulse — offset by 1/3 of duration */}
-            <circle r="1.8" fill="#FF5555" opacity="0.55">
-              <animateMotion
-                dur={`${dur}s`}
-                repeatCount="indefinite"
-                begin={`${i * 0.55 + dur / 2.5}s`}
+                begin={`${i * 0.7}s`}
               >
                 <mpath href={`#conn-${from}-${to}`} />
               </animateMotion>
@@ -192,40 +202,36 @@ export default function WorldMap() {
         {/* ── Location dots ── */}
         {locations.map((loc, idx) => {
           const isMain = loc.type === "hq" || loc.type === "office";
-          const r = isMain ? 5 : 3;
+          const r = isMain ? 4 : 2.5;
           const color = isMain ? "#CC0000" : "#7A7A8A";
           return (
             <g key={loc.id}>
+              {/* Single subtle pulse — HQ/office only */}
               {isMain && visible && (
-                <>
-                  <circle cx={loc.x} cy={loc.y} r="20" fill={color} opacity="0">
-                    <animate attributeName="r" values="6;22;6" dur="2.8s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.22;0;0.22" dur="2.8s" repeatCount="indefinite" />
-                  </circle>
-                  <circle cx={loc.x} cy={loc.y} r="12" fill={color} opacity="0">
-                    <animate attributeName="r" values="4;14;4" dur="2.8s" begin="0.4s" repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.28;0;0.28" dur="2.8s" begin="0.4s" repeatCount="indefinite" />
-                  </circle>
-                </>
+                <circle cx={loc.x} cy={loc.y} r="4" fill={color} opacity="0">
+                  <animate attributeName="r" values="4;11;4" dur="3.5s" repeatCount="indefinite" begin={`${idx * 0.3}s`} />
+                  <animate attributeName="opacity" values="0.14;0;0.14" dur="3.5s" repeatCount="indefinite" begin={`${idx * 0.3}s`} />
+                </circle>
               )}
+
               <circle
                 cx={loc.x}
                 cy={loc.y}
                 r={r}
                 fill={color}
-                filter={isMain ? "url(#hq-glow)" : undefined}
-                opacity={visible ? (isMain ? 1 : 0.75) : 0}
-                style={{ transition: `opacity 0.5s ease ${idx * 100}ms` }}
+                opacity={visible ? (isMain ? 0.95 : 0.65) : 0}
+                style={{ transition: `opacity 0.5s ease ${idx * 80}ms` }}
               />
+
               {isMain && (
                 <text
-                  x={loc.x + 8}
+                  x={loc.x + 7}
                   y={loc.y + 1}
-                  fontSize="7"
-                  fontWeight="700"
+                  fontSize="6.5"
+                  fontWeight="600"
                   fill={color}
-                  opacity={visible ? 0.9 : 0}
-                  style={{ transition: "opacity 0.6s ease 900ms" }}
+                  opacity={visible ? 0.85 : 0}
+                  style={{ transition: "opacity 0.6s ease 800ms" }}
                   fontFamily="Inter, sans-serif"
                 >
                   {loc.label}
@@ -235,18 +241,18 @@ export default function WorldMap() {
           );
         })}
 
-        {/* Stat overlays */}
+        {/* Stat overlays — repositioned for cropped viewBox */}
         {visible && (
           <g>
-            <rect x="10" y="418" width="150" height="54" rx="9" fill="white" opacity="0.92" />
-            <text x="24" y="437" fontSize="7.5" fill="#888" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.08em">GLOBAL REACH</text>
-            <text x="24" y="455" fontSize="15" fill="#111" fontFamily="Inter, sans-serif" fontWeight="800">15+ Countries</text>
-            <text x="24" y="466" fontSize="7.5" fill="#CC0000" fontFamily="Inter, sans-serif" fontWeight="600">25+ Active Clients</text>
+            <rect x="38" y="368" width="136" height="46" rx="7" fill="white" opacity="0.9" />
+            <text x="50" y="384" fontSize="7" fill="#888" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.08em">GLOBAL REACH</text>
+            <text x="50" y="400" fontSize="13" fill="#111" fontFamily="Inter, sans-serif" fontWeight="800">15+ Countries</text>
+            <text x="50" y="410" fontSize="7" fill="#CC0000" fontFamily="Inter, sans-serif" fontWeight="600">25+ Active Clients</text>
 
-            <rect x="838" y="418" width="150" height="54" rx="9" fill="white" opacity="0.92" />
-            <text x="852" y="437" fontSize="7.5" fill="#888" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.08em">SATISFACTION</text>
-            <text x="852" y="455" fontSize="15" fill="#111" fontFamily="Inter, sans-serif" fontWeight="800">98% Rate</text>
-            <text x="852" y="466" fontSize="7.5" fill="#CC0000" fontFamily="Inter, sans-serif" fontWeight="600">Since 2022</text>
+            <rect x="826" y="368" width="136" height="46" rx="7" fill="white" opacity="0.9" />
+            <text x="840" y="384" fontSize="7" fill="#888" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="0.08em">SATISFACTION</text>
+            <text x="840" y="400" fontSize="13" fill="#111" fontFamily="Inter, sans-serif" fontWeight="800">98% Rate</text>
+            <text x="840" y="410" fontSize="7" fill="#CC0000" fontFamily="Inter, sans-serif" fontWeight="600">Since 2022</text>
           </g>
         )}
       </svg>
