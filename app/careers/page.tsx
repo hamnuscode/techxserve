@@ -57,7 +57,7 @@ export default function CareersPage() {
       {/* ── Culture ── */}
       <section className="py-24 bg-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-14">
+          <AnimatedSection className="mb-14 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Culture</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Life at TechxServe</h2>
           </AnimatedSection>
@@ -80,7 +80,7 @@ export default function CareersPage() {
       {/* ── Open Positions ── */}
       <section className="py-24 bg-off-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-12">
+          <AnimatedSection className="mb-12 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Positions</p>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <h2 className="text-4xl font-black text-charcoal tracking-tight">Open Roles</h2>

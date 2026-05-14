@@ -173,7 +173,7 @@ export default function ServicesPage() {
       {/* ── Tech Stack ── */}
       <section className="py-24 bg-off-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="mb-14">
+          <AnimatedSection className="mb-14 ml-[85px]">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Stack</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Technologies We Work With</h2>
           </AnimatedSection>
