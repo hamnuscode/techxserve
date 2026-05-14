@@ -183,7 +183,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 100}>
-                <div className="card-lift grad-border bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
+                <div className="card-lift card-line bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
                   <div className={`w-12 h-12 rounded-xl ${v.color} flex items-center justify-center`}>
                     <v.icon size={22} className={v.iconColor} />
                   </div>
@@ -232,7 +232,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {whyPoints.map((pt, i) => (
               <AnimatedSection key={pt.title} delay={i * 70}>
-                <div className="card-lift grad-border flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
+                <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
                   <div className="w-9 h-9 rounded-xl bg-brand-red/8 flex items-center justify-center shrink-0 mt-0.5">
                     <pt.icon size={16} className="text-brand-red" />
                   </div>

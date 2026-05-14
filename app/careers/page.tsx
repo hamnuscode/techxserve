@@ -64,7 +64,7 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {culture.map((c, i) => (
               <AnimatedSection key={c.title} delay={i * 90}>
-                <div className="card-lift grad-border bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
+                <div className="card-lift card-line bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
                   <div className={`w-12 h-12 rounded-xl ${c.color} flex items-center justify-center`}>
                     <c.icon size={22} className={c.iconColor} />
                   </div>
