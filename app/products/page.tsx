@@ -5,7 +5,7 @@ import ProductsGrid from "@/components/ProductsGrid";
 export const metadata: Metadata = {
   title: "Products & Work",
   description:
-    "Case studies: ISPR enterprise dashboard, Xephra gaming platform, BHTD logistics app, Police Foundation portals.",
+    "Case studies: Bespoke CRM Software, ISPR enterprise dashboard, Xephra gaming platform, BHTD logistics app, Police Foundation portals.",
 };
 
 export default function ProductsPage() {

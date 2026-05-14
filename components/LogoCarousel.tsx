@@ -5,6 +5,7 @@ const clients = [
   { name: "Xephra",           abbr: "XP" },
   { name: "BHTD",             abbr: "BH" },
   { name: "Police Foundation",abbr: "PF" },
+  { name: "SixthLedger",      abbr: "SL" },
   { name: "FinTech Co.",      abbr: "FT" },
   { name: "LogiCore",         abbr: "LC" },
   { name: "EduSpark",         abbr: "ES" },

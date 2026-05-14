@@ -17,6 +17,26 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: "bespoke-crm",
+    name: "Bespoke CRM",
+    initials: "BC",
+    tag: "Enterprise · CRM · Fintech",
+    oneLine: "Built for how you actually work. You handle the business. We handle the tech and the numbers.",
+    overview: "We build bespoke CRM software for businesses that have outgrown spreadsheets and off-the-shelf SaaS. Our flagship engine adapts to any industry—from security and logistics to healthcare and retail. Built alongside SixthLedger (ACCA-affiliate accountants), the system carries accountant-level accuracy into every transaction, reconciliation, and report. Deployment ships in days, not quarters.",
+    built: [
+      "Unified Operations Dashboard with live compliance alerts",
+      "Role-Based Access Control & Granular Permissions",
+      "Attendance-Linked Payroll & Full HR Management",
+      "Financial Accounting (Receivables, Payables, Bank Ledgers)",
+      "Automated P&L, Cashflow & Client-Wise Profitability Reports",
+      "Inventory & Asset Logistics with serial number tracking",
+      "Privacy-First Ledger Sharing with SixthLedger accounting team",
+      "Automated Statutory Reporting & Tax Filing Support",
+    ],
+    photos: ["Unified Dashboard", "Payroll Interface", "P&L Statement", "Inventory Logistics", "Compliance Calendar"],
+    liveLink: null,
+  },
+  {
     id: "ispr",
     name: "ISPR",
     initials: "IS",
@@ -207,8 +227,21 @@ function CaseStudyDetail({ project }: { project: Project }) {
               </ul>
             </div>
 
-            <div className="pt-5 border-t border-border-gray">
-              {project.liveLink ? (
+            <div className="pt-5 border-t border-border-gray flex flex-wrap items-center gap-4">
+              {project.id === "bespoke-crm" ? (
+                <>
+                  <a
+                    href="mailto:info@techxserve.com?subject=CRM Demo"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red text-white text-sm font-semibold rounded-xl hover:bg-brand-red-dark transition-all shadow-[var(--shadow-red)]"
+                  >
+                    Book Free Demo <ExternalLink size={13} />
+                  </a>
+                  <div className="px-4 py-3 rounded-xl bg-brand-red/8 border border-brand-red/20">
+                    <p className="text-brand-red text-xs font-black uppercase tracking-widest">Launch Offer: 50% OFF</p>
+                    <p className="text-mid-gray text-[10px] mt-0.5">Full integration & bonuses included</p>
+                  </div>
+                </>
+              ) : project.liveLink ? (
                 <a
                   href={project.liveLink}
                   target="_blank"

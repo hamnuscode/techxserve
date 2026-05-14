@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { icon: Code2,    title: "Custom Software",        desc: "Bespoke tools engineered around your exact workflows and growth plan.",                   href: "/services#custom-software" },
+  { icon: Code2,    title: "Custom Software",        desc: "High-performance tools like our Bespoke CRM, built for your exact workflows and scale.",   href: "/services#custom-software" },
   { icon: Cloud,    title: "Cloud & Transformation", desc: "Migrate, modernize, and manage your stack in the cloud, built for scale.",               href: "/services#cloud"           },
   { icon: Brain,    title: "AI & Data Analytics",    desc: "Turn raw data into sharp decisions with AI-powered pipelines and dashboards.",           href: "/services#ai-data"         },
   { icon: Zap,      title: "Automation & SaaS",      desc: "Intelligent systems that eliminate repetitive work and free your team to focus on growth.", href: "/services#automation"    },
