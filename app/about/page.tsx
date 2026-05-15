@@ -211,9 +211,6 @@ export default function AboutPage() {
                   <span className="text-[42px] font-black text-brand-red leading-none">{step.n}</span>
                   <h3 className="font-bold text-charcoal text-sm">{step.title}</h3>
                   <p className="text-mid-gray text-xs leading-relaxed flex-1">{step.desc}</p>
-                  {i < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 -right-3 w-6 h-px bg-gradient-to-r from-brand-red/30 to-transparent" />
-                  )}
                 </div>
               </AnimatedSection>
             ))}

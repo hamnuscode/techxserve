@@ -287,16 +287,16 @@ export default function ProductsGrid() {
         return (
           <div key={row[0].id} className="space-y-3">
             {/* Card row */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {row.map((proj) => (
-                <ProjectCard
-                  key={proj.id}
-                  project={proj}
-                  isActive={proj.id === activeId}
-                  onClick={() => toggle(proj.id)}
-                />
+                <div key={proj.id} className="w-full sm:w-[calc(50%-0.5rem)]">
+                  <ProjectCard
+                    project={proj}
+                    isActive={proj.id === activeId}
+                    onClick={() => toggle(proj.id)}
+                  />
+                </div>
               ))}
-              {row.length < 2 && <div />}
             </div>
 
             {/* Inline dropdown detail */}
