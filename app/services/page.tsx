@@ -125,7 +125,7 @@ export default function ServicesPage() {
               <AnimatedSection key={svc.id}>
                 <div
                   id={svc.id}
-                  className={`py-20 border-b border-border-gray last:border-0 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center ml-[85px] ${
+                  className={`py-20 border-b border-border-gray last:border-0 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center ${
                     flip ? "lg:[&>*:first-child]:order-last" : ""
                   }`}
                 >
@@ -177,7 +177,7 @@ export default function ServicesPage() {
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Stack</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Technologies We Work With</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ml-[85px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {techStack.map((cat, i) => (
               <AnimatedSection key={cat.category} delay={i * 70}>
                 <div className="bg-white rounded-2xl border border-border-gray p-7 h-full">

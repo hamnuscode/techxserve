@@ -124,7 +124,7 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Purpose</p>
             <h2 className="text-4xl md:text-5xl font-black text-charcoal tracking-tight">Vision &amp; Mission</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ml-[85px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 num: "01",
@@ -179,7 +179,7 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Values</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">What Drives Us</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ml-[85px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v, i) => (
               <AnimatedSection key={v.title} delay={i * 100}>
                 <div className="card-lift card-line bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
@@ -204,7 +204,7 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Process</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">How We Work</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 ml-[85px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {steps.map((step, i) => (
               <AnimatedSection key={step.n} delay={i * 80}>
                 <div className="relative bg-white rounded-2xl border border-border-gray p-6 h-full flex flex-col gap-3 hover:border-brand-red/30 hover:shadow-[var(--shadow-md)] transition-all duration-300">
@@ -225,7 +225,7 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Why Us</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Why Choose TechxServe</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ml-[85px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {whyPoints.slice(0, 3).map((pt, i) => (
               <AnimatedSection key={pt.title} delay={i * 70}>
                 <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">
@@ -240,7 +240,7 @@ export default function AboutPage() {
               </AnimatedSection>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-5 mt-5 ml-[85px]">
+          <div className="flex flex-wrap justify-center gap-5 mt-5">
             {whyPoints.slice(3).map((pt, i) => (
               <AnimatedSection key={pt.title} delay={(i + 3) * 70} className="w-full md:w-[calc(50%-10px)] lg:w-[calc(33.33%-14px)]">
                 <div className="card-lift card-line flex gap-4 p-6 bg-off-white rounded-2xl border border-border-gray h-full">

@@ -32,7 +32,7 @@ export default function ProductsPage() {
       {/* ── Project Grid ── */}
       <section className="py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-6">
-          <AnimatedSection className="ml-[85px]">
+          <AnimatedSection>
             <ProductsGrid />
           </AnimatedSection>
         </div>

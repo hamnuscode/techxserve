@@ -61,7 +61,7 @@ export default function CareersPage() {
             <p className="text-[11px] font-semibold uppercase tracking-widest text-brand-red mb-2">Culture</p>
             <h2 className="text-4xl font-black text-charcoal tracking-tight">Life at TechxServe</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ml-[85px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {culture.map((c, i) => (
               <AnimatedSection key={c.title} delay={i * 90}>
                 <div className="card-lift card-line bg-off-white rounded-2xl border border-border-gray p-8 flex flex-col gap-5 h-full cursor-default">
@@ -87,7 +87,7 @@ export default function CareersPage() {
               <p className="text-mid-gray text-sm">Islamabad, PK · Remote options available</p>
             </div>
           </AnimatedSection>
-          <AnimatedSection className="ml-[85px]">
+          <AnimatedSection>
             <CareerAccordion />
           </AnimatedSection>
         </div>
